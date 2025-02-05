@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --c1:#4F378A;
+    --c2:#EADDFF;
+}
+
+body{
+    background-color: #EADDFF;
+}

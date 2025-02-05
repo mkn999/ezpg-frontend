@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4F378A;
+    color: white;
+  }
+  
+  .navbar .logo a {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: 'poppins';
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLinks li a {
+    text-decoration: none;
+    color: #EADDFF;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Inter';
+  }
+  
+  .navLinks li a:hover {
+    color: #f0a500;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .navLinks {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      flex-direction: column;
+      padding: 20px;
+      gap: 15px;
+    }
+  
+    .navLinks.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
