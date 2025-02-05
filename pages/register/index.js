@@ -3,8 +3,8 @@ import Egister from "../../components/egister";
 
 export default function Register(){
     return(
-     <Login />
-        //  <Egister />
+     //<Login />
+        <Egister />
     );
 
 }
