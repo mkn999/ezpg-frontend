@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import "../egister/style.css";
 
-export default function Register() {
+
+export default function Register ({ switchToLogin }) {
   const [formData, setForm] = useState({ name: "", phonenumber: "", room: "", password: "" });
 
   const handleChange = (e) => {
@@ -31,6 +33,7 @@ export default function Register() {
 
   return (
     <div className="container register">
+    <p class="sign-in">Register Now</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,7 +67,12 @@ export default function Register() {
           placeholder="Password"
           required
         />
+        <div className="dont">
         <button type="submit">Register</button>
+        <button onClick={switchToLogin} className="text-blue-500 underline">
+            Login
+        </button>
+        </div>
       </form>
     </div>
   );

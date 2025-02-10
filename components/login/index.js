@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../login/style.css";
 import axios from "axios";
 
-export default function Login(){
+export default function Login({ switchToRegister }){
 
 
     const [formData,setForm] = useState({username: "",password: "" })
@@ -35,10 +35,16 @@ export default function Login(){
 
     return(
        <div className="container register">
+        <p class="sign-in">Sign In</p>
        <form onSubmit={handleSubmit}>
             <input type="text" name="username" placeholder="phonenumber" onChange={handleChange} required />
             <input type="password" name="password" placeholder="password" onChange={handleChange} required />
+            <div className="dont">
             <button type="submit">Submit</button>
+            <button onClick={switchToRegister} className="text-blue-500 underline">
+            Register
+          </button>
+          </div>
         </form>
     </div>
     );
