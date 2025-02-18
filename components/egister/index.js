@@ -2,9 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import "../egister/style.css";
 
-
 export default function Register ({ switchToLogin }) {
-  const [formData, setForm] = useState({ name: "", phonenumber: "", room: "", password: "" });
+  const [formData, setForm] = useState({ name: "", phone_number: "", room: "", gender:"", password: "" });
 
   const handleChange = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
@@ -14,26 +13,23 @@ export default function Register ({ switchToLogin }) {
      e.preventDefault();
      console.log(formData);
      try {
-       const response = await axios.post("http://192.168.0.143:3110/register", formData, {
+       const response = await axios.post("http://192.168.1.52:3110/register", formData, {
          headers: {
            "Content-Type": "application/json"
          },
-         body: JSON.stringify(formData),
        });
        console.log(response.data);
        alert("Form submitted successfully!");
-       setForm({ name: "", phonenumber: "", roomnumber: "", password: "" });
+       setForm({ phone_number: "",name: "",room: "", gender:"" ,password: "" });
      } catch (error) {
        console.error("Error submitting form:", error);
        alert("Failed to submit form.");
      }
-    // 
-    
   };
 
   return (
     <div className="container register">
-    <p class="sign-in">Register Now</p>
+      <p className="sign-in">Register Now</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -45,8 +41,8 @@ export default function Register ({ switchToLogin }) {
         />
         <input
           type="text"
-          name="phonenumber"
-          value={formData.phonenumber}
+          name="phone_number"
+          value={formData.phone_number}
           onChange={handleChange}
           placeholder="Phone"
           required
@@ -54,9 +50,17 @@ export default function Register ({ switchToLogin }) {
         <input
           type="text"
           name="room"
-          value={formData.roomnumber}
+          value={formData.room}
           onChange={handleChange}
           placeholder="Room"
+          required
+        />
+        <input
+          type="text"
+          name="gender"
+          value={formData.gender}
+          onChange={handleChange}
+          placeholder="Gender"
           required
         />
         <input
@@ -67,11 +71,12 @@ export default function Register ({ switchToLogin }) {
           placeholder="Password"
           required
         />
+  
         <div className="dont">
-        <button type="submit">Register</button>
-        <button onClick={switchToLogin} className="text-blue-500 underline">
+          <button type="submit">Register</button>
+          <button onClick={switchToLogin} className="text-blue-500 underline">
             Login
-        </button>
+          </button>
         </div>
       </form>
     </div>

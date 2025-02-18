@@ -43,8 +43,8 @@ const MaleInfo = () => {
         <div className='students-container'>
                     {residents.map((resident) => (
                         <div key={resident.phone_number} className='students-info'>
-                            <p>{resident.name}</p>
-                            <p className='rnum'>{resident.room_number}</p>
+                            <p className='rname'>{resident.name}</p>
+                            <p>{resident.room_number}</p>
                             <p>{resident.gender}</p>
                         </div>
                     ))}
