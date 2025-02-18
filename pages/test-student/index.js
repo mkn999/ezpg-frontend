@@ -1,4 +1,4 @@
-import FoodInfo from "../../components/finfo";
+import FoodInfo from "../../components/breakfast";
 import Navbar from "../../components/navbar";
 import UniCode from "../../components/unicode";
 import './style.css';

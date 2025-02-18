@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./style.css";
-
+import Navbar from "../../components/navbar";
 export default function Nadmin() {
   const [isOn, setIsOn] = useState(false);
 
@@ -29,10 +29,14 @@ export default function Nadmin() {
 
   return (
     <div>
+      <Navbar />
+      <div className="contianery">
+      <p>Turn on Alarm</p>
       <label className="switch">
         <input type="checkbox" checked={isOn} onChange={handleToggle} />
         <span className="slider round"></span>
       </label>
+      </div>
     </div>
   );
 }

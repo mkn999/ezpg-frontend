@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const socket = io("http://localhost:3110");  
 
-export default function FoodInfo ({ name }) {
+export default function Breakfast ({ name }) {
     const [foodStatus, setFoodStatus] = useState(0); // "waiting", "ready", "over"
     
         useEffect(() => {

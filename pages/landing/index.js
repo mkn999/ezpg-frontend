@@ -1,5 +1,5 @@
 import Navbar from "../../components/navbar";
-import FoodInfo from "../../components/finfo";
+import FoodInfo from "../../components/breakfast";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/global.css';
 
