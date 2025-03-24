@@ -9,7 +9,7 @@ const FemaleInfo = () => {
     useEffect(() => {
         const fetchResidents = async () => {
             try {
-                const response = await fetch('http://192.168.1.52:3110/get-female', {
+                const response = await fetch('http://192.168.248.105:3110/get-female', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

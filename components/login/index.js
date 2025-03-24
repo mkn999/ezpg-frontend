@@ -37,13 +37,13 @@ export default function Login({ switchToRegister }){
        <div className="container register">
         <p class="sign-in">Sign In</p>
        <form onSubmit={handleSubmit}>
-            <input type="text" name="username" placeholder="phonenumber" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="password" onChange={handleChange} required />
+            {/* <input type="text" name="username" placeholder="phonenumber" onChange={handleChange} required />
+            <input type="password" name="password" placeholder="password" onChange={handleChange} required /> */}
             <div className="dont">
-            <button type="submit">Submit</button>
-            <button onClick={switchToRegister} className="text-blue-500 underline">
+            <button type="submit">Sign In with Google</button>
+            {/* <button onClick={switchToRegister} className="text-blue-500 underline">
             Register
-          </button>
+          </button> */}
           </div>
         </form>
     </div>

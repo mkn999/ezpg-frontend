@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const socket = io("http://localhost:3110");  
+const socket = io("http://192.168.248.105:3110");  
 
 export default function Breakfast ({ name }) {
     const [foodStatus, setFoodStatus] = useState(0); // "waiting", "ready", "over"

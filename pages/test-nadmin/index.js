@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QRScanner from "../../components/qr-scanner";
 import "./style.css";
 import Navbar from "../../components/navbar";
 export default function Nadmin() {
@@ -8,7 +9,7 @@ export default function Nadmin() {
   const updateFoodStatus = async (status) => {
     try {
       const endpoint = status ? "food-ready" : "food-over";
-      const response = await fetch(`http://localhost:3110/${endpoint}`, {
+      const response = await fetch(`http://192.168.248.105:3110/${endpoint}`, {
         method: "POST",
       });
       const data = await response.text();
@@ -31,11 +32,12 @@ export default function Nadmin() {
     <div>
       <Navbar />
       <div className="contianery">
-      <p>Turn on Alarm</p>
+      {/* <p>Turn on Alarm</p>
       <label className="switch">
         <input type="checkbox" checked={isOn} onChange={handleToggle} />
         <span className="slider round"></span>
-      </label>
+      </label> */}
+      <QRScanner />
       </div>
     </div>
   );

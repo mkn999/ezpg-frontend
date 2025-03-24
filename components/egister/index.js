@@ -13,7 +13,7 @@ export default function Register ({ switchToLogin }) {
      e.preventDefault();
      console.log(formData);
      try {
-       const response = await axios.post("http://192.168.1.52:3110/register", formData, {
+       const response = await axios.post("http://192.168.248.105:3110/register", formData, {
          headers: {
            "Content-Type": "application/json"
          },

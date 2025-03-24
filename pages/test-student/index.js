@@ -11,8 +11,8 @@ export default function StudentPage() {
         <div className="container p-3">
             <p className="title-for px-2">Food Info</p>
             <FoodInfo name={"Breakfast"} />
-            <FoodInfo name={"Lunch"} />
-            <FoodInfo name={"Dinner"} />
+            {/* <FoodInfo name={"Lunch"} />
+            <FoodInfo name={"Dinner"} /> */}
             <UniCode />
         </div>
         </>
