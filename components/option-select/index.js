@@ -2,7 +2,7 @@ import './style.css';
 import StudentContent from "../student-content";
 import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Settings, Ticket } from "lucide-react"; // Import icons
+import { Home,  Ticket } from "lucide-react"; // Import icons
 import TicketSystem from '../ticket-system';
 
 export default function OptionSelect(){

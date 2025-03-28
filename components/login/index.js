@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import './style.css';
 
-export default function MainLogin() {
+export default function MainLogin({link,profile}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,7 +11,7 @@ export default function MainLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:3110/tesalogin", {
+    const res = await fetch(link, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -22,7 +22,7 @@ export default function MainLogin() {
     if (res.ok) {
       // ✅ Redirect to profile automatically
       router.push({
-        pathname: "/profile",
+        pathname: profile,
         query: { username, password }, // Pass credentials in URL
       });
     } else {
