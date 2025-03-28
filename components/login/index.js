@@ -1,51 +1,58 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "../login/style.css";
-import axios from "axios";
+import { useRouter } from "next/router";
+import './style.css';
 
-export default function Login({ switchToRegister }){
+export default function MainLogin() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-    const [formData,setForm] = useState({username: "",password: "" })
-    const handleChange = (e) => {
-        setForm({ ...formData, [e.target.name]: e.target.value });
-      };
+    const res = await fetch("http://localhost:3110/tesalogin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
 
-      const handleSubmit = /*(e) => {
-        e.preventDefault();
-        console.log("Form Submitted:", form);
-        alert("Registered successfully!");
-        setForm({ name: "", room:"",password: "" });
-      }; */
-      async (e) => {
-        e.preventDefault();
-        try {
-          const response = await axios.post("http://192.168.0.143:3110/login", formData, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-            console.log(response.data);
-            alert("Form submitted successfully!");
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Failed to submit form.");
-        }
-    };
+    const data = await res.json();
 
-    return(
-       <div className="container register">
-        <p class="sign-in">Sign In</p>
-       <form onSubmit={handleSubmit}>
-            {/* <input type="text" name="username" placeholder="phonenumber" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="password" onChange={handleChange} required /> */}
-            <div className="dont">
-            <button type="submit">Sign In with Google</button>
-            {/* <button onClick={switchToRegister} className="text-blue-500 underline">
-            Register
-          </button> */}
-          </div>
-        </form>
+    if (res.ok) {
+      // ✅ Redirect to profile automatically
+      router.push({
+        pathname: "/profile",
+        query: { username, password }, // Pass credentials in URL
+      });
+    } else {
+      setError(data.message);
+    }
+  };
+
+  return (
+    <div className="main-conti">
+      <div className="second-cont">
+      <h2>Login</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <form onSubmit={handleLogin} className="form">
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="button">Login</button>
+      </form>
+      </div>
     </div>
-    );
+  );
 }

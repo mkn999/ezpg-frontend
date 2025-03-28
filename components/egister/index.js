@@ -3,7 +3,7 @@ import axios from "axios";
 import "../egister/style.css";
 
 export default function Register ({ switchToLogin }) {
-  const [formData, setForm] = useState({ name: "", phone_number: "", room: "", gender:"", password: "" });
+  const [formData, setForm] = useState({ username:"",name: "", phone_number: "", room: "", gender:"", password: "" });
 
   const handleChange = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
@@ -13,14 +13,14 @@ export default function Register ({ switchToLogin }) {
      e.preventDefault();
      console.log(formData);
      try {
-       const response = await axios.post("http://192.168.248.105:3110/register", formData, {
+       const response = await axios.post("http://localhost:3110/register", formData, {
          headers: {
            "Content-Type": "application/json"
          },
        });
        console.log(response.data);
        alert("Form submitted successfully!");
-       setForm({ phone_number: "",name: "",room: "", gender:"" ,password: "" });
+       setForm({ username:"",phone_number: "",name: "",room: "", gender:"" ,password: "" });
      } catch (error) {
        console.error("Error submitting form:", error);
        alert("Failed to submit form.");
@@ -29,8 +29,16 @@ export default function Register ({ switchToLogin }) {
 
   return (
     <div className="container register">
-      <p className="sign-in">Register Now</p>
+      <p className="sign-in">Register</p>
       <form onSubmit={handleSubmit}>
+      <input
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          placeholder="Username"
+          required
+        />
         <input
           type="text"
           name="name"

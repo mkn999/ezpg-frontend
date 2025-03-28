@@ -1,55 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
-.register{
-    width: 500px;
-    height: 600px;
-    background-color: #4F378A;
+:root {
+    --main-bg:#4F378A;
+    --second-bg:#EADDFF;
+    --main-font:"Montserrat", sans-serif;
+    --second-font:"Space Grotesk", sans-serif;
+  }
+
+  /* From Uiverse.io by MikeAndrewDesigner */   
+  
+*{
+     margin:0;
+     padding:0;
+     box-sizing:border-box;
+}
+.main-conti{
+    /* display: flex;
+    width:100vw;
+    height:100vh;
+    align-items: center;
+    justify-content: center; */
+    /* From Uiverse.io by milegelu */ 
+    width: 100vw;
+    height: 100vh;
+  
+    background: #000000;
+    --gap: 5em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.2);
+  
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+  }
+
+.second-cont{
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    /* background: var(--main-bg); */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3); */
+    height: 100%;
+    width: 100%;
 }
-
-.sign-in{
-    color: #FFFFFF;
+.second-cont h2{
+    /* color: var(--second-bg); */
     font-family: 'Poppins';
-    font-weight: 600;
-    text-align: center;
-    margin-top: 40px;
     font-size: 40px;
+    -webkit-text-stroke: 1px #ffffff;
 }
 
-.submit-btn{
-    font-family: poppins;
-    background-color: #4F378A;
-    color: #FFFFFF;
-}   
+/* form {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+} */
 
-.register form{
+.form{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 200px;
+    gap: 10px;
+}
+.form input{
+    padding: 5px;
+    outline: none;
 }
 
-.register input{
-    width: 300px;
-    padding: 10px;
-    margin: 10px;
+.form button{
+    padding: 3px 0px;
 }
 
-.register button{
-    width: 100px;
-}
-
-.dont{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    font-family: 'Poppins';
-    
-}
-
+/* From Uiverse.io by cssbuttons-io */ 
+/* From Uiverse.io by reshades */ 

@@ -1,6 +1,6 @@
 import './style.css';
 import { useEffect, useState } from 'react';
-
+import Loader from '../loader';
 const MaleInfo = () => {
     const [residents, setResidents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -9,7 +9,7 @@ const MaleInfo = () => {
     useEffect(() => {
         const fetchResidents = async () => {
             try {
-                const response = await fetch('http://192.168.248.105:3110/get-male', {
+                const response = await fetch('http://localhost:3110/get-male', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -35,9 +35,9 @@ const MaleInfo = () => {
         fetchResidents();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loader />;
 
-    if (error) return <div>Error: {error}</div>;
+    if (error) return <div className='text-danger'>Error: {error}</div>;
 
     return (
         <div className='students-container'>

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ProNav from "../../components/pro-nav";
+import Loader from "../../components/loader";
+import StudentContent from "../../components/student-content";
+
 export default function Profile() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
@@ -42,12 +45,12 @@ export default function Profile() {
   
 
   if (error) return <p>{error}</p>;
-  if (!user) return <p>Loading...</p>;
+  if (!user) return <Loader />;
 
   return (
     <div>
-      {/* <nav>Welcome, {user.username}!</nav> */}
       <ProNav user={user} />
+      <StudentContent />
       <button onClick={() => router.push("/login")}>Logout</button>
     </div>
   );

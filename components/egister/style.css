@@ -8,27 +8,43 @@
     padding: 0px;
 }
 
-body{
-    background-color: #EADDFF;
+body{  
+    background: #000000;
+    --gap: 5em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.2);
+  
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
 }
 
 .register{
     width: 500px;
     height: 500px;
-    background-color: #4F378A;
     display: flex;
     flex-direction: column;
     margin-top: 40px;
-    border-radius: 50px;
+    
 }
 
 .sign-in{
-    color: #FFFFFF;
     font-family: 'Poppins';
     font-weight: 600;
     text-align: center;
     margin-top: 40px;
     font-size: 40px;
+    -webkit-text-stroke: 1px #ffffff;
 }
 
 .submit-btn{
@@ -48,11 +64,11 @@ body{
     width: 300px;
     padding: 10px;
     margin: 10px;
-    border-radius: 10px;
     box-shadow: none;
     border: 1px solid #ffffff;
     outline: none; 
 }
+/* 
 
 .register button{
   background-color: #22222200;
@@ -80,7 +96,18 @@ body{
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
+} */
+.register button{
+    
+    border:1px solid white;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 11px 30px;
+    font-family: 'Poppins';
+}
 
+.register button:hover{
+    color: #4F378A;
 }
 
 button,button {
@@ -103,7 +130,7 @@ button,button {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 70vh;
+    height: 90vh;
     border-radius: 0px;
     margin: 0px;
     }

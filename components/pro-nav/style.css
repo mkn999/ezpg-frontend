@@ -13,10 +13,16 @@
     box-sizing: border-box;
 }
 
-.nav{
+.nava{
     background-color: var(--main-bg);
-    padding: 40px;
+    padding: 20px;
     font-family: var(--main-font);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.nava p{
+    margin: 0;
 }
 .white-color{
     color: var(--second-bg);

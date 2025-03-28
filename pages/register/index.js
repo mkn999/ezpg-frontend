@@ -10,11 +10,11 @@ export default function Register() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-lg shadow-md w-80">
-        {isLogin ? (
+        {/* {isLogin ? (
           <Login switchToRegister={switchToRegister} />
-        ) : (
+        ) : ( */}
           <Egister switchToLogin={switchToLogin} />
-        )}
+        {/* )} */}
       </div>
     </div>
   );
