@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ProNav from "../../components/pro-nav";
 import Loader from "../../components/loader";
-import StudentContent from "../../components/student-content";
+import OptionSelect from "../../components/option-select";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -50,7 +50,7 @@ export default function Profile() {
   return (
     <div>
       <ProNav user={user} />
-      <StudentContent />
+      <OptionSelect />
       <button onClick={() => router.push("/login")}>Logout</button>
     </div>
   );
