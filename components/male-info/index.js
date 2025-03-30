@@ -1,53 +1,28 @@
+import useSWR from 'swr';
 import './style.css';
-import { useEffect, useState } from 'react';
 import Loader from '../loader';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 const MaleInfo = () => {
-    const [residents, setResidents] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { data: residents, error } = useSWR('http://localhost:3110/get-male', fetcher, {
+        refreshInterval: 300, // 3000s (50 minutes)
+    });
 
-    useEffect(() => {
-        const fetchResidents = async () => {
-            try {
-                const response = await fetch('http://localhost:3110/get-male', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
+    if (!residents) return <Loader />;
 
-                const data = await response.json();
-                console.log(data); // Log the data to inspect the structure
-
-                if (response.ok) {
-                    setResidents(data); // Update this line based on the actual response
-                } else {
-                    setError(data.error || 'Failed to fetch data');
-                }
-            } catch (err) {
-                setError('Error fetching data');
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchResidents();
-    }, []);
-
-    if (loading) return <Loader />;
-
-    if (error) return <div className='text-danger'>Error: {error}</div>;
+    if (error) return <div className='text-danger'>Error: {error.message || 'Failed to fetch data'}</div>;
 
     return (
         <div className='students-container'>
-                    {residents.map((resident) => (
-                        <div key={resident.phone_number} className='students-info'>
-                            <p className='rname'>{resident.name}</p>
-                            <p>{resident.room_number}</p>
-                            <p>{resident.gender}</p>
-                        </div>
-                    ))}
+            <p className='info-name'>Male List</p>
+            {residents.map((resident) => (
+                <div key={resident.phone_number} className='students-info'>
+                    <p className='rname'>{resident.name}</p>
+                    <p>{resident.room_number}</p>
+                    <p>{resident.gender}</p>
+                </div>
+            ))}
         </div>
     );
 };

@@ -1,0 +1,70 @@
+.search{
+    height: 70vh;
+}
+.search-title{
+    font-size: 40px;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+.search-form{
+display: flex;
+gap: 10px;
+}
+.search-button{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #7662a8;
+    color: #ffffff;
+    border: 1px dotted #4F378A;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'poppins';
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out;
+}
+.search-button:hover{
+    background-color: #4F378A;
+
+}
+
+.input{
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out,border-color 0.3s ease-in-out;
+
+  }
+  
+  .input:focus {
+    border-color: #4F378A;
+    box-shadow: 0 0 0 0.2rem rgba(225, 0, 255, 0.25);
+  }
+  
+.profile-cont{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    /* From https://css.glass */
+    background: rgba(228, 227, 230, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px dotted rgba(228, 227, 230, 0.3);
+    padding: 30px;
+    transition: border 0.3s ease-in-out;
+}
+.profile-cont:hover{
+    border: 1px dotted #4F378A;
+}
+.user-result{
+    font-family: 'Poppins';
+    text-transform: capitalize;
+    font-weight: 600;
+
+}

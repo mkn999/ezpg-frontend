@@ -4,6 +4,7 @@ import ProNav from "../../components/pro-nav";
 import Loader from "../../components/loader";
 import MaleInfo from "../../components/male-info";
 import FemaleInfo from "../../components/female-info";
+import AdminOptions from "../../components/options-admin";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -54,19 +55,20 @@ export default function Profile() {
   return (
     <div>
       <ProNav user={user} />
-      <div className='containeri'>
-            <p className='title-mf'>{isComponentA ? "Male List" : "Female List"}</p>
-            {isComponentA ? <MaleInfo /> : <FemaleInfo />}
-            </div>
-      <div className='containery'>
+        {/* <div className='containeri'>
+            {/* <p className='title-mf'>{isComponentA ? "Male List" : "Female List"}</p> 
+            {/* {isComponentA ? <MaleInfo /> : <FemaleInfo />} 
+            </div> */}
+      {/* <div className='containery'>
         <button onClick={() => setIsComponentA(true)} disabled={isComponentA} className='btn-ad'>
           Back
         </button>
         <button onClick={() => setIsComponentA(false)} disabled={!isComponentA} className='btn-ad'>
           Next
         </button>
-        </div>
-      <button onClick={() => router.push("/login")}>Logout</button>
+        </div> */}
+        <AdminOptions />
+      {/* <button onClick={() => router.push("/login")}>Logout</button> */}
     </div>
   );
 }

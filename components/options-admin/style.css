@@ -1,0 +1,53 @@
+.m-cont{
+    display: flex;
+}
+
+.button-cont{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 30%;
+    /* justify-content: center; */
+}
+.container-for-content{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonz{
+    display: flex;
+    border: none;
+    align-items: center;
+    border: 1px solid #4F378A;
+    border-top: none;
+    /* border-left-style: solid; */
+    width: 20vw;
+    padding: 30px;
+    background-color: #FFFFFF; 
+   /* From https://css.glass */
+    background: rgba(190, 187, 198, 0.11);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(79, 55, 138, 0.3);
+}
+
+
+.checked{
+    background-color: #EADDFF;
+   color: #4F378A;
+   border: 1px dotted;
+}
+
+@media screen and (max-width: 768px) {
+    .button-cont{
+        width: auto;
+       
+    }
+    .buttonz{
+        padding: 10px;
+        width: auto;
+    }
+}
