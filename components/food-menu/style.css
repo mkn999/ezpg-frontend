@@ -1,0 +1,37 @@
+.food-menu{
+    display: flex;
+    width: auto;
+    height: 100px;
+    margin: 6px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 50px;
+    /* From https://css.glass */
+    background: #FEF7FF;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border:1px solid rgba(128, 128, 128, 0.411);
+    font-family: 'Poppins';
+    transition: background-color 0.3s ease-in-out;
+}
+
+.food-menu:hover{
+    background-color: #d9d2e941;
+}
+.menu-title{
+    text-align: center;
+    font-family: 'Poppins';
+    margin: 10px;
+}
+.food-title{
+    font-weight: 700;
+}
+
+.checked{
+    color: #ffffff;
+}
+.unchecked{
+    color: rgba(255, 255, 255, 0.64);
+}

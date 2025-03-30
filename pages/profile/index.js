@@ -32,7 +32,7 @@ export default function Profile() {
   
         if (!data.user) {
           setError("Unauthorized");
-          router.push("/test-login");
+          router.push("/user-login");
         } else {
           setUser(data.user);
         }
@@ -50,8 +50,8 @@ export default function Profile() {
   return (
     <div>
       <ProNav user={user} />
-      <OptionSelect />
-      <button onClick={() => router.push("/login")}>Logout</button>
+      <OptionSelect username={username} user={user}/>
+      {/* <button onClick={() => router.push("/login")}>Logout</button> */}
     </div>
   );
 }

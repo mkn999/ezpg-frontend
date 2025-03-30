@@ -9,7 +9,7 @@
 }
 
 body{  
-    background: #000000;
+    background: #4F378A;
     --gap: 5em;
     --line: 1px;
     --color: rgba(255, 255, 255, 0.2);
@@ -45,6 +45,7 @@ body{
     margin-top: 40px;
     font-size: 40px;
     -webkit-text-stroke: 1px #ffffff;
+   color: #4F378A;
 }
 
 .submit-btn{
@@ -101,13 +102,13 @@ body{
     
     border:1px solid white;
     color: #FFFFFF;
-    background-color: #000000;
+    background-color: #4F378A;
     padding: 11px 30px;
     font-family: 'Poppins';
 }
 
 .register button:hover{
-    color: #4F378A;
+    color: #15c23d;
 }
 
 button,button {

@@ -4,13 +4,13 @@ import { useState } from 'react';
 export default function StudentSearch() {
   const [username, setUsername] = useState("");
   const [roomnumber, setRoomNumber] = useState("");
-  const [userData, setUserData] = useState([]); // Initialize as an empty array
+  const [userData, setUserData] = useState([]); // Store multiple users
   const [error, setError] = useState("");
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    setError(""); // Clear previous errors
-    setUserData([]); // Reset previous user data
+    setError("");
+    setUserData([]); // Reset user data before fetching
 
     try {
       const res = await fetch("http://localhost:3110/user-search", {
@@ -23,8 +23,7 @@ export default function StudentSearch() {
       console.log("Fetched Data:", data); // Debugging log
 
       if (res.ok) {
-        // ✅ If the backend sends multiple users, ensure data.user is an array
-        setUserData(Array.isArray(data.user) ? data.user : [data.user]);
+        setUserData(Array.isArray(data.users) ? data.users : []);
       } else {
         setError(data.message || "User not found");
       }
@@ -34,37 +33,58 @@ export default function StudentSearch() {
   };
 
   return (
-    <div className='search'>
-      <p className='search-title'>Search User</p>
-      <p style={{ color: "red" }}>does not show multipler users</p>
-      <form className='search-form'>
+    <div className="search">
+      <p className="search-title">Search User</p>      
+      <form className="search-form" onSubmit={handleSearch}>
         <input
           type="text"
           name="username"
-          placeholder="Enter username"
+          placeholder="Enter Name"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className='input'
+          className="input"
           required
         />
         <input
           type="text"
           name="roomnumber"
-          placeholder="Enter room number"
+          placeholder="Enter Room Number"
+          value={roomnumber}
           onChange={(e) => setRoomNumber(e.target.value)}
-          className='input'
+          className="input"
           required
         />
       </form>
-      <button onClick={handleSearch} className='search-button'>Search</button>
+      <button onClick={handleSearch} className="search-button">Search</button>
 
       {/* Display User Info */}
       {userData.length > 0 && (
         <div className="profile-cont">
           {userData.map((user, index) => (
             <div key={index}>
-              <p>Name: <span className='user-result'>{user.name || "N/A"}</span></p>
-              <p>Room Number: <span className='user-result'>{user.room_number || "N/A"}</span> </p>
-              <p>Room Number: <span className='user-result'>{user.phone_number || "N/A"}</span></p>
+              <p>Name: <span className="user-result">{user.name || "N/A"}</span></p>
+              <p>Username: <span className="user-result">{user.username || "N/A"}</span></p>
+              <p>Room Number: <span className="user-result">{user.room_number || "N/A"}</span></p>
+              <p>Phone Number: <span className="user-result">{user.phone_number || "N/A"}</span></p>
+              <p>Gender: <span className="user-result">{user.gender || "N/A"}</span></p>
+
+
+              {/* Show Last Food Taken */}
+              {user.last_food ? (
+                <>
+                  <p>Last Food: <span className="user-result">{user.last_food.food_name || "N/A"}</span></p>
+                  <p>
+                    Taken At:{" "}
+                    <span className="user-result">
+                      {new Date(user.last_food.taken_at).toLocaleTimeString()}{" "}
+                      {new Date(user.last_food.taken_at).toLocaleDateString()}
+                    </span>
+                  </p>
+                </>
+              ) : (
+                <p></p>
+              )}
+              <hr></hr>
             </div>
           ))}
         </div>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import "../egister/style.css";
 
+// const router = useRouter(); // Initialize router
+
 export default function Register ({ switchToLogin }) {
   const [formData, setForm] = useState({ username:"",name: "", phone_number: "", room: "", gender:"", password: "" });
 
@@ -19,8 +21,10 @@ export default function Register ({ switchToLogin }) {
          },
        });
        console.log(response.data);
-       alert("Form submitted successfully!");
-       setForm({ username:"",phone_number: "",name: "",room: "", gender:"" ,password: "" });
+       console.log("loggedf");
+       
+      //  setForm({ username:"",phone_number: "",name: "",room: "", gender:"" ,password: "" });
+       alert("User already registered!");
      } catch (error) {
        console.error("Error submitting form:", error);
        alert("Failed to submit form.");

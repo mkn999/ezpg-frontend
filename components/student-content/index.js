@@ -1,10 +1,10 @@
 import UniCode from "../unicode";
 import Breakfast from "../breakfast";
-export default function StudentContent(){
+export default function StudentContent({username,user}){
 return(
     <>
-    <Breakfast name={'Breakfast'} />
-    <UniCode />
+    <Breakfast />
+    <UniCode username={username} user={user}/>
     </>
 );
 }

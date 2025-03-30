@@ -1,0 +1,42 @@
+
+
+.non{
+    font-family: 'Poppins';
+    font-weight: 700;
+
+}
+
+.ticket-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px dotted #4F378A;
+    border-radius: 10px;
+}
+
+.ticket-div{
+    width: auto;
+    background-color: #FEF7FF;
+    padding: 30px;
+    background: rgba(228, 227, 230, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(228, 227, 230, 0.3);
+}
+
+.ticket-div button{
+    background-color: #FEF7FF;
+    padding: 10px; 
+    border-radius: 10px;
+    border: 1px solid #4F378A;
+}
+
+.main-p{
+    font-weight: 700;
+}
+
+.disabled{
+    display: none;
+}

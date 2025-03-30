@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const socket = io("http://192.168.248.105:3110");  
+const socket = io("http://localhost:3110");  
 
-export default function Breakfast ({ name }) {
+export default function Breakfast () {
     const [foodStatus, setFoodStatus] = useState(0); // "waiting", "ready", "over"
-    
+    const [mealType, setMealType] = useState("");
+
         useEffect(() => {
             // Listen for "foodReady" event
             socket.on("foodReady", () => {
@@ -31,6 +32,21 @@ export default function Breakfast ({ name }) {
                 socket.off("foodOver");
             };
         }, []);
+        useEffect(() => {
+            const getMealType = () => {
+                const currentHour = new Date().getHours();
+    
+                if (currentHour >= 23 || currentHour < 11) {
+                    setMealType("Breakfast");
+                } else if (currentHour >= 11 && currentHour < 15) {
+                    setMealType("Lunch");
+                } else {
+                    setMealType("Dinner");
+                }
+            };
+    
+            getMealType();
+        }, []);
 return(
     <>
     <div>
@@ -40,7 +56,7 @@ return(
     :
     <div className="indicator ready"></div>
     }
-    <p className="m-0">{name}</p>
+    <p className="m-0">{mealType}</p>
     {/* <Image  src="/foodimg.png" alt="food-img" className="food-img" width={0} height={200} style={{ width: "auto", height: "80px" }}  /> */}
     </div>
     </div>

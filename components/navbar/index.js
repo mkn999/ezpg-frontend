@@ -11,19 +11,19 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="#">EZPG</a>
+        <a href="#" className='p-5'>EZPG</a>
       </div>
-      <ul className={`navLinks ${isOpen ? 'active' : ''}`}>
+      {/* <ul className={`navLinks ${isOpen ? 'active' : ''}`}>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
-      <div className="hamburger" onClick={toggleMenu}>
+      </ul> */}
+      {/* <div className="hamburger" onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
-      </div>
+      </div> */}
     </nav>
   );
 };

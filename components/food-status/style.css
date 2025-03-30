@@ -1,35 +1,16 @@
-/* The switch - the box around the slider */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-}
-
-.contianery{
-  margin-top: 10px;
-  width: 300px;
+/*switch*/
+.switch-cont{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-family: "Poppins";
-  font-weight: bold;
-  font-size: 30px;
-  gap: 10px;
+  flex-direction: column;
+  padding:50px;
+  /* From https://css.glass */
+background: rgba(228, 227, 230, 0.11);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.2px);
+-webkit-backdrop-filter: blur(6.2px);
+border: 1px solid rgba(228, 227, 230, 0.3);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 .switch {
     position: relative;
     display: inline-block;
@@ -70,11 +51,11 @@
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #4F378A;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #4F378A;
   }
   
   input:checked + .slider:before {
@@ -91,3 +72,4 @@
   .slider.round:before {
     border-radius: 50%;
   }
+  /*switch*/
