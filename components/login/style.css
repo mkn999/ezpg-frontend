@@ -26,7 +26,7 @@
     width: 100vw;
     height: 100vh;
   
-    background: #000000;
+    background: var(--main-bg);
     --gap: 5em;
     --line: 1px;
     --color: rgba(255, 255, 255, 0.2);
@@ -63,7 +63,8 @@
     /* color: var(--second-bg); */
     font-family: 'Poppins';
     font-size: 40px;
-    -webkit-text-stroke: 1px #ffffff;
+    /* -webkit-text-stroke: 1px #ffffff; */
+    color: var(--second-bg);
 }
 
 /* form {

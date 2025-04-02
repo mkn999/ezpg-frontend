@@ -26,7 +26,7 @@ export default function AdminDashboard(){
             <div className="user-count">
             <p className="tol">Female Users</p>
             <p  className='title-data'>{data.female}</p>
-            </div>         
+            </div>   
         </div>
     );
 }

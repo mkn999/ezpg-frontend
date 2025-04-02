@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserRoundX ,UserRoundSearch,Mars,Venus,BookUser,Gauge,Tickets  } from "lucide-react"; // Import icons
+import { UserRoundX ,UserRoundSearch,Mars,Venus,BookUser,Gauge,Tickets,ChartColumn   } from "lucide-react"; // Import icons
 import MaleInfo from "../male-info";
 import FemaleInfo from "../female-info";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +9,7 @@ import UserDelete from "../delete-user";
 import FoodFetch from "../food-fetch";
 import AdminDashboard from "../admin-dashboard";
 import FetchTickets from "../fetch-tickets";
+import FoodGraph from "../food-graph";
 
 
 export default function AdminOptions(){
@@ -21,6 +22,7 @@ export default function AdminOptions(){
                 <button className={`buttonz ${activeComponent === "first" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("first")}><Mars /> <span className="m-1">Male-Info</span></button>
                 <button className={`buttonz ${activeComponent === "second" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("second")}><Venus/> <span className="m-1">Female-Info</span></button>
                 <button className={`buttonz ${activeComponent === "fifth" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("fifth")}><BookUser /><span className="m-1">Food-Log</span></button>
+                <button className={`buttonz ${activeComponent === "mid" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("mid")}><ChartColumn  /><span className="m-1">Weekly Food Graph</span></button>
                 <button className={`buttonz ${activeComponent === "third" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("third")}><UserRoundSearch /> <span className="m-1">User-Search</span></button>
                 <button className={`buttonz ${activeComponent === "fourth" ? "checked" : "unchecked"}`} onClick={()=> setActiveComponent("fourth")}><UserRoundX /> <span className="m-1">Delete-User</span></button>
 
@@ -116,6 +118,18 @@ export default function AdminOptions(){
                   transition={{ duration: 0.3 }}
                 >
                   <FetchTickets />
+                </motion.div>
+              );
+              case "mid":
+              return (
+                <motion.div
+                  key="eight"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FoodGraph />
                 </motion.div>
               );
     default:
