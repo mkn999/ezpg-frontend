@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Loader from '../loader';
-
+import './style.css'
 import {
   ResponsiveContainer,
   LineChart,
@@ -56,7 +56,7 @@ export default function FoodGraph() {
   
   return (
     <div className="food-graph">
-      {/* <h2>Food Consumption trend</h2> */}
+      <h2>Weekly Food Info</h2>
       <div style={{ width: 500, height: 300 }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
@@ -67,6 +67,8 @@ export default function FoodGraph() {
                left: 20,
                bottom: 5,
              }}
+            //  animationDuration={2000} // Animation speed (in milliseconds)
+            //  animationEasing="ease-in-out" // Smooth transition effect
           >
         <CartesianGrid/>
             
@@ -93,9 +95,9 @@ export default function FoodGraph() {
               stroke="#4F378A"
               strokeWidth={2}
               activeDot={{ r: 7 }}
-              name="Food Consumption"
-              animationDuration={2000} // Animation speed (in milliseconds)
-              animationEasing="ease-in-out" // Smooth transition effect
+              name="Days"
+               animationDuration={2000} // Animation speed (in milliseconds)
+               animationEasing="ease-in-out" // Smooth transition effect
             />
           </LineChart>
         </ResponsiveContainer>

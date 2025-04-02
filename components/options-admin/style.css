@@ -1,5 +1,6 @@
 .m-cont{
     display: flex;
+    overflow: hidden;
 }
 
 .button-cont{
@@ -37,6 +38,7 @@
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(6.2px);
     border: 1px solid rgba(79, 55, 138, 0.3);
+    transition: background-color 0.1s ease-in-out;
 }
 
 .buttonz span{
@@ -49,6 +51,11 @@
    border: 1px dotted #5427c6 ;
 }
 
+.buttonz:hover{
+    background-color: #EADDFF;
+   color: #4F378A;
+   /* border: 1px dotted #5427c6 ; */
+}
 @media screen and (max-width: 768px) {
     .button-cont{
         width: auto;
