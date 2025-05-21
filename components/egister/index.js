@@ -37,7 +37,7 @@ export default function Register ({ switchToLogin }) {
   return (
     <div className="register">
       <form onSubmit={handleSubmit}>
-      <p className="sign-in">Register</p>
+      <p className="sign-in">Sign-Up</p>
       <input
           type="text"
           name="username"
@@ -94,7 +94,7 @@ export default function Register ({ switchToLogin }) {
         </div>
       </form>
       <div className="d-white">
-        <img src="/images/gold.svg" alt="Logo" width={500} height={600}></img>
+        <img src="/images/silver.svg" alt="Logo" width={500} height={600}></img>
       </div>
     </div>
   );

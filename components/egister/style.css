@@ -53,8 +53,8 @@ body{
     text-align: center;
     margin-top: 40px;
     font-size: 60px;
-    -webkit-text-stroke: 1px #ffffff;
-    color: #4F378A;
+    /* -webkit-text-stroke: 1px #ffffff; */
+    color: rgb(234, 221, 255);
 }
 
 .submit-btn{

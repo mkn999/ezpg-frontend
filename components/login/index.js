@@ -33,9 +33,12 @@ export default function MainLogin({link,profile}) {
   return (
     <div className="main-conti">
       <div className="second-cont">
-      <h2>Login</h2>
+      <div className="d-white">
+        <img src="/images/ae.svg" alt="Logo" width={600} height={700}></img>
+      </div>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleLogin} className="form">
+      <h2>Login</h2>
         <input
           type="text"
           placeholder="Username"
