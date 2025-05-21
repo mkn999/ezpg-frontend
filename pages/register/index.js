@@ -8,14 +8,8 @@ export default function Register() {
   const switchToLogin = () => setIsLogin(true);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-80">
-        {/* {isLogin ? (
-          <Login switchToRegister={switchToRegister} />
-        ) : ( */}
+    <div>
           <Egister switchToLogin={switchToLogin} />
-        {/* )} */}
-      </div>
     </div>
   );
 }

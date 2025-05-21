@@ -12,29 +12,32 @@ export default function Register ({ switchToLogin }) {
   };
 
   const handleSubmit = async (e) => {
-     e.preventDefault();
-     console.log(formData);
-     try {
-       const response = await axios.post("http://localhost:3110/register", formData, {
-         headers: {
-           "Content-Type": "application/json"
-         },
-       });
-       console.log(response.data);
-       console.log("loggedf");
-       
-      //  setForm({ username:"",phone_number: "",name: "",room: "", gender:"" ,password: "" });
-       alert("User already registered!");
-     } catch (error) {
-       console.error("Error submitting form:", error);
-       alert("Failed to submit form.");
-     }
+    e.preventDefault();
+    // console.log(formData);
+    try {
+      const response = await axios.post("http://localhost:3110/register", formData, {
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+      console.log(response.data);
+      console.log("loggedf");
+  
+      // Reset form after successful submission
+      setForm({ username:"", name: "", phone_number: "", room: "", gender:"", password: "" });
+  
+      alert("User registered successfully!"); // you might want to change this depending on actual server response
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form.");
+    }
   };
+  
 
   return (
-    <div className="container register">
-      <p className="sign-in">Register</p>
+    <div className="register">
       <form onSubmit={handleSubmit}>
+      <p className="sign-in">Register</p>
       <input
           type="text"
           name="username"
@@ -85,12 +88,14 @@ export default function Register ({ switchToLogin }) {
         />
   
         <div className="dont">
-          <button type="submit">Register</button>
           <button onClick={switchToLogin} className="text-blue-500 underline">
-            Login
+            Register
           </button>
         </div>
       </form>
+      <div className="d-white">
+        <img src="/images/gold.svg" alt="Logo" width={500} height={600}></img>
+      </div>
     </div>
   );
 }

@@ -29,16 +29,24 @@ align-items: center;
 
 .login-down p{
     font-family: 'Poppins';
-    font-size: 40px;
+    font-size: 50px;
     color: #FFFFFF;
     font-weight: bold;
 }
 
 button{
-    width: 100px;
+    width: 300px;
     height: 50px;
+    font-family: 'Poppins';
+    font-size: 20px;
     background-color: #4F378A;
     color: #FFFFFF;
     border-radius: 50px;
     border: none;
+    margin: 10px;
+    transition:  color ease-in-out .1s;
+}
+
+button:hover{
+    color: #EADDFF;
 }
